@@ -1,0 +1,20 @@
+#more variables and printing
+#and more use of "format strings" which are string with varibles in them
+
+my_name = 'H.Anon'
+my_age = 67 #no lie bro
+my_height = 70 #inches
+my_weight = 175 #pounds
+my_eyes = 'Blue'
+my_teeth  = 'Yellow'
+my_hair = 'Grey'
+
+print "Let's talk about %s." % my_name
+print "He's %d inches tall." % my_height
+print "He's %d pounds heavy." % my_weight
+print "Very athletic huh?"
+print "His eyes are %s and hair is %s." %(my_eyes, my_hair)
+print "And of course since he's not American his teeth are %s" % my_teeth
+
+print "If I add %d, %d and %d I get %d. Not that that number is liely to be of any use!" % (
+my_age, my_height, my_weight, my_age + my_height + my_weight)
