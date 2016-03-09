@@ -18,3 +18,12 @@ print "And of course since he's not American his teeth are %s" % my_teeth
 
 print "If I add %d, %d and %d I get %d. Not that that number is liely to be of any use!" % (
 my_age, my_height, my_weight, my_age + my_height + my_weight)
+
+#Turn inches to centimeters
+my_height_cent = (my_height * 2.54)
+print "So in centimeters my height is %s" % my_height_cent
+
+
+#Turn pounds to KGs
+weight_KGs = (my_weight * .45359)
+print "So weight in KGs is %s" % weight_KGs
