@@ -1,0 +1,26 @@
+#for python 3.  From sci-hub thread
+
+import bs4, requests, json
+r = requests.get("http://93.174.95.27/repository_torrent/")
+s = bs4.BeautifulSoup(r.text)
+torrs = s.findAll("a")[1:]
+fails = []
+for t in torrs[1:]:
+    ln = "http://93.174.95.27/repository_torrent/" + t.attrs['href']
+    print(ln, end="...")
+    r = requests.get(ln)
+    #with open(t.attrs['href'], 'wb') as O:
+    #    O.write(r.content)
+    try:
+        r.raise_for_status()
+        with open(t.attrs['href'], 'wb') as O:
+            O.write(r.content)
+    except:
+        fails.append(t)
+        print("OK")
+if failed:
+    print("Failed on", len(failed), "downloads, saved as JSON to failures.json")
+    with open("failures.json") as O:
+        print(json.dumps(fails, indent=1), file=O)
+else:
+    print("Succeeded on all downloads!")
